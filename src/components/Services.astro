@@ -1,18 +1,13 @@
 ---
-const services = [
-  {
-    title: 'Thaimassasje',
-    description: 'Tradisjonell thaimassasje som kombinerer akupressur, strekkøvelser og energilinjearbeid. Lindrer spenninger, bedrer blodsirkulasjonen og gir dyp avslapning for kropp og sinn.',
-    features: ['Akupressur', 'Strekkøvelser', 'Energiarbeid', 'Smertelindring'],
-    icon: 'massage',
-  },
-  {
-    title: 'Homeopati',
-    description: 'Helhetlig behandling basert på naturlige midler som stimulerer kroppens eget helbredelsessystem. Egnet for et bredt spekter av plager, fra kroniske tilstander til akutte symptomer.',
-    features: ['Naturlig behandling', 'Helhetlig tilnærming', 'Individtilpasset', 'MNLH-godkjent'],
-    icon: 'leaf',
-  },
-];
+interface Service {
+  title: string;
+  description: string;
+  features: string[];
+}
+interface Props {
+  services: Service[];
+}
+const { services } = Astro.props;
 ---
 
 <section id="tjenester" class="py-20 sm:py-28 bg-surface">
@@ -34,11 +29,10 @@ const services = [
     </div>
 
     <div class="grid md:grid-cols-2 gap-8">
-      {services.map(service => (
+      {services.map((service, i) => (
         <div class="bg-bg rounded-2xl p-8 sm:p-10 shadow-sm hover:shadow-md transition-shadow">
-          <!-- Icon -->
           <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-            {service.icon === 'massage' ? (
+            {i === 0 ? (
               <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
               </svg>

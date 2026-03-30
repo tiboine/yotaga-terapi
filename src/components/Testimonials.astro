@@ -1,42 +1,14 @@
 ---
-const testimonials = [
-  {
-    name: 'Tordis B.',
-    text: 'Utrolig bra massasje! Fine omgivelser og hyggelig behandler. Blir ikke siste gangen!',
-    service: 'Dypvevsmassasje',
-    rating: 5,
-  },
-  {
-    name: 'Marita B.',
-    text: 'Beste massasjen jeg har fått, veldig dyktig dame!',
-    service: 'Tradisjonell thaimassasje',
-    rating: 5,
-  },
-  {
-    name: 'Ronalyn D.',
-    text: 'Veldig avslappende. Anbefales for de som har jobb som krever fysisk eller tungt arbeid, hjelper å løsne kroppen.',
-    service: 'Dypvevsmassasje',
-    rating: 5,
-  },
-  {
-    name: 'Gunn E.',
-    text: 'Veldig bra, anbefales!',
-    service: 'Nakke/rygg/skuldermassasje',
-    rating: 5,
-  },
-  {
-    name: 'Irene P.',
-    text: 'Dyktig behandler.',
-    service: 'Aromamassasje',
-    rating: 5,
-  },
-  {
-    name: 'Kunde',
-    text: 'Fantastisk opplevelse fra start til slutt. Wanpen er utrolig flink og profesjonell.',
-    service: 'Tradisjonell thaimassasje',
-    rating: 5,
-  },
-];
+interface Testimonial {
+  name: string;
+  text: string;
+  service: string;
+  rating: number;
+}
+interface Props {
+  testimonials: Testimonial[];
+}
+const { testimonials } = Astro.props;
 ---
 
 <section class="py-20 sm:py-28 bg-bg">

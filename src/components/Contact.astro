@@ -1,5 +1,12 @@
 ---
-
+interface Props {
+  phone: string;
+  email: string;
+  facebook: string;
+  location: string;
+}
+const { phone, email, facebook, location } = Astro.props;
+const phoneClean = phone.replace(/\s/g, '');
 ---
 
 <section id="kontakt" class="py-20 sm:py-28 bg-surface">
@@ -23,8 +30,8 @@
           </svg>
         </div>
         <h3 class="font-semibold text-primary-dark mb-2">Telefon</h3>
-        <a href="tel:+4792202424" class="text-text-light hover:text-primary-dark transition-colors">
-          +47 922 02 424
+        <a href={`tel:${phoneClean}`} class="text-text-light hover:text-primary-dark transition-colors">
+          {phone}
         </a>
       </div>
 
@@ -36,8 +43,8 @@
           </svg>
         </div>
         <h3 class="font-semibold text-primary-dark mb-2">E-post</h3>
-        <a href="mailto:pennialgar@yahoo.com" class="text-text-light hover:text-primary-dark transition-colors">
-          pennialgar@yahoo.com
+        <a href={`mailto:${email}`} class="text-text-light hover:text-primary-dark transition-colors">
+          {email}
         </a>
       </div>
 
@@ -50,7 +57,7 @@
         </div>
         <h3 class="font-semibold text-primary-dark mb-2">Facebook</h3>
         <a
-          href="https://www.facebook.com/Yotagaterapi"
+          href={facebook}
           target="_blank"
           rel="noopener noreferrer"
           class="text-text-light hover:text-primary-dark transition-colors"
@@ -71,10 +78,7 @@
         </div>
         <div>
           <h3 class="font-semibold text-primary-dark mb-2">Lokasjon</h3>
-          <p class="text-text-light leading-relaxed">
-            Yotaga Terapi holder til i Nord-Norge og tilbyr behandlinger i
-            Indre Billefjord, Lakselv og Tromsø-området.
-          </p>
+          <p class="text-text-light leading-relaxed">{location}</p>
         </div>
       </div>
     </div>

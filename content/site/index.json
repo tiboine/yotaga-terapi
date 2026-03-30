@@ -1,0 +1,69 @@
+{
+  "hero": {
+    "subtitle": "Thaimassasje & Homeopati",
+    "title": "Yotaga Terapi",
+    "description": "Opplev tradisjonell thaimassasje og naturlig helbredelse gjennom homeopati. Din vei til velvære og balanse starter her."
+  },
+  "about": {
+    "name": "Wanpen Algar",
+    "bio": "Velkommen til Yotaga Terapi! Jeg er Wanpen Algar, og jeg har drevet med thaimassasje og homeopati siden 2015.",
+    "bio2": "Med bakgrunn i tradisjonell thaimassasje kombinerer jeg eldgamle teknikker med moderne forståelse av kropp og helse. Min tilnærming er helhetlig - jeg behandler hele mennesket, ikke bare symptomene.",
+    "bio3": "Jeg er stolt medlem av Norges Landsforbund av Homeopraktikere (NLH), og jobber kontinuerlig med å utvikle min kompetanse for å gi deg den beste behandlingen."
+  },
+  "services": [
+    {
+      "title": "Thaimassasje",
+      "description": "Tradisjonell thaimassasje som kombinerer akupressur, strekkøvelser og energilinjearbeid. Lindrer spenninger, bedrer blodsirkulasjonen og gir dyp avslapning for kropp og sinn.",
+      "features": ["Akupressur", "Strekkøvelser", "Energiarbeid", "Smertelindring"]
+    },
+    {
+      "title": "Homeopati",
+      "description": "Helhetlig behandling basert på naturlige midler som stimulerer kroppens eget helbredelsessystem. Egnet for et bredt spekter av plager, fra kroniske tilstander til akutte symptomer.",
+      "features": ["Naturlig behandling", "Helhetlig tilnærming", "Individtilpasset", "MNLH-godkjent"]
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Tordis B.",
+      "text": "Utrolig bra massasje! Fine omgivelser og hyggelig behandler. Blir ikke siste gangen!",
+      "service": "Dypvevsmassasje",
+      "rating": 5
+    },
+    {
+      "name": "Marita B.",
+      "text": "Beste massasjen jeg har fått, veldig dyktig dame!",
+      "service": "Tradisjonell thaimassasje",
+      "rating": 5
+    },
+    {
+      "name": "Ronalyn D.",
+      "text": "Veldig avslappende. Anbefales for de som har jobb som krever fysisk eller tungt arbeid, hjelper å løsne kroppen.",
+      "service": "Dypvevsmassasje",
+      "rating": 5
+    },
+    {
+      "name": "Gunn E.",
+      "text": "Veldig bra, anbefales!",
+      "service": "Nakke/rygg/skuldermassasje",
+      "rating": 5
+    },
+    {
+      "name": "Irene P.",
+      "text": "Dyktig behandler.",
+      "service": "Aromamassasje",
+      "rating": 5
+    },
+    {
+      "name": "Kunde",
+      "text": "Fantastisk opplevelse fra start til slutt. Wanpen er utrolig flink og profesjonell.",
+      "service": "Tradisjonell thaimassasje",
+      "rating": 5
+    }
+  ],
+  "contact": {
+    "phone": "+47 922 02 424",
+    "email": "pennialgar@yahoo.com",
+    "facebook": "https://www.facebook.com/Yotagaterapi",
+    "location": "Yotaga Terapi holder til i Nord-Norge og tilbyr behandlinger i Indre Billefjord, Lakselv og Tromsø-området."
+  }
+}

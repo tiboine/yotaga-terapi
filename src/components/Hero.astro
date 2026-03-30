@@ -1,5 +1,10 @@
 ---
-
+interface Props {
+  subtitle: string;
+  title: string;
+  description: string;
+}
+const { subtitle, title, description } = Astro.props;
 ---
 
 <section class="relative min-h-[90vh] flex items-center justify-center text-white overflow-hidden">
@@ -11,14 +16,13 @@
 
   <div class="relative z-10 text-center px-4 sm:px-6 max-w-3xl mx-auto pt-16">
     <p class="text-secondary font-medium text-sm sm:text-base uppercase tracking-widest mb-4">
-      Thaimassasje & Homeopati
+      {subtitle}
     </p>
     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-      Yotaga Terapi
+      {title}
     </h1>
     <p class="text-lg sm:text-xl text-white/85 leading-relaxed mb-10 max-w-2xl mx-auto">
-      Opplev tradisjonell thaimassasje og naturlig helbredelse gjennom homeopati.
-      Din vei til velvere og balanse starter her.
+      {description}
     </p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a

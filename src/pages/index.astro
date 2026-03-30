@@ -8,17 +8,33 @@ import Testimonials from '../components/Testimonials.astro';
 import Booking from '../components/Booking.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
+
+import siteData from '../../content/site/index.json';
 ---
 
 <Layout>
   <Header />
   <main>
-    <Hero />
-    <About />
-    <Services />
-    <Testimonials />
+    <Hero
+      subtitle={siteData.hero.subtitle}
+      title={siteData.hero.title}
+      description={siteData.hero.description}
+    />
+    <About
+      name={siteData.about.name}
+      bio={siteData.about.bio}
+      bio2={siteData.about.bio2}
+      bio3={siteData.about.bio3}
+    />
+    <Services services={siteData.services} />
+    <Testimonials testimonials={siteData.testimonials} />
     <Booking />
-    <Contact />
+    <Contact
+      phone={siteData.contact.phone}
+      email={siteData.contact.email}
+      facebook={siteData.contact.facebook}
+      location={siteData.contact.location}
+    />
   </main>
   <Footer />
 </Layout>
