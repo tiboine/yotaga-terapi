@@ -1,0 +1,76 @@
+---
+const navLinks = [
+  { href: '#om-meg', label: 'Om meg' },
+  { href: '#tjenester', label: 'Tjenester' },
+  { href: '#bestill', label: 'Bestill time' },
+  { href: '#kontakt', label: 'Kontakt' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-bg/95 backdrop-blur-sm border-b border-surface">
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <a href="#" class="text-xl font-bold text-primary-dark tracking-tight">
+      Yotaga Terapi
+    </a>
+
+    <!-- Desktop nav -->
+    <ul class="hidden md:flex items-center gap-8">
+      {navLinks.map(link => (
+        <li>
+          <a href={link.href} class="text-sm font-medium text-text-light hover:text-primary-dark transition-colors">
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="menu-toggle"
+      class="md:hidden p-2 text-text-light hover:text-primary-dark"
+      aria-label="Meny"
+      aria-expanded="false"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path id="icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        <path id="icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-bg border-b border-surface">
+    <ul class="px-4 py-4 space-y-3">
+      {navLinks.map(link => (
+        <li>
+          <a href={link.href} class="mobile-link block text-base font-medium text-text-light hover:text-primary-dark transition-colors">
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = menu?.classList.toggle('hidden') === false;
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    iconOpen?.classList.toggle('hidden', isOpen);
+    iconClose?.classList.toggle('hidden', !isOpen);
+  });
+
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      menu?.classList.add('hidden');
+      toggle?.setAttribute('aria-expanded', 'false');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+    });
+  });
+</script>

@@ -1,0 +1,79 @@
+---
+const services = [
+  {
+    title: 'Thaimassasje',
+    description: 'Tradisjonell thaimassasje som kombinerer akupressur, strekkøvelser og energilinjearbeid. Lindrer spenninger, bedrer blodsirkulasjonen og gir dyp avslapning for kropp og sinn.',
+    features: ['Akupressur', 'Strekkøvelser', 'Energiarbeid', 'Smertelindring'],
+    icon: 'massage',
+  },
+  {
+    title: 'Homeopati',
+    description: 'Helhetlig behandling basert på naturlige midler som stimulerer kroppens eget helbredelsessystem. Egnet for et bredt spekter av plager, fra kroniske tilstander til akutte symptomer.',
+    features: ['Naturlig behandling', 'Helhetlig tilnærming', 'Individtilpasset', 'MNLH-godkjent'],
+    icon: 'leaf',
+  },
+];
+---
+
+<section id="tjenester" class="py-20 sm:py-28 bg-surface">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Decorative image -->
+    <div class="mb-12 rounded-2xl overflow-hidden shadow-sm max-w-2xl mx-auto">
+      <img src="/images/towels.jpg" alt="Behandlingsdetaljer" class="w-full h-48 sm:h-64 object-cover" />
+    </div>
+
+    <div class="text-center mb-16">
+      <p class="text-secondary font-medium text-sm uppercase tracking-widest mb-3">Tjenester</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-primary-dark mb-4">
+        Hva jeg tilbyr
+      </h2>
+      <p class="text-text-light max-w-2xl mx-auto leading-relaxed">
+        Jeg tilbyr behandlinger som hjelper deg med å oppnå balanse, lindring og velvære
+        gjennom tradisjonelle og naturlige metoder.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {services.map(service => (
+        <div class="bg-bg rounded-2xl p-8 sm:p-10 shadow-sm hover:shadow-md transition-shadow">
+          <!-- Icon -->
+          <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+            {service.icon === 'massage' ? (
+              <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+              </svg>
+            ) : (
+              <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3c-1.2 0-2.1.6-2.7 1.2-.6.6-1.2 1.5-1.2 2.7 0 1.8 1.2 3 2.4 3.9.6.45 1.2.75 1.5.9.3-.15.9-.45 1.5-.9 1.2-.9 2.4-2.1 2.4-3.9 0-1.2-.6-2.1-1.2-2.7C14.1 3.6 13.2 3 12 3zM12 12s-6 3-6 7.5c0 0 2.4 1.5 6 1.5s6-1.5 6-1.5c0-4.5-6-7.5-6-7.5z" />
+              </svg>
+            )}
+          </div>
+
+          <h3 class="text-2xl font-bold text-primary-dark mb-3">{service.title}</h3>
+          <p class="text-text-light leading-relaxed mb-6">{service.description}</p>
+
+          <div class="flex flex-wrap gap-2 mb-8">
+            {service.features.map(feature => (
+              <span class="inline-flex items-center gap-1.5 bg-primary/8 text-primary-dark text-sm font-medium px-3 py-1.5 rounded-lg">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {feature}
+              </span>
+            ))}
+          </div>
+
+          <a
+            href="#bestill"
+            class="inline-flex items-center gap-2 text-primary-dark font-semibold hover:text-primary transition-colors"
+          >
+            Bestill time
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
